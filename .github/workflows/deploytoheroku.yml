@@ -1,4 +1,4 @@
-name: Deploy Capstone-Flags to Heroku
+name: Deploy To Heroku
 
 on:
   push:
@@ -27,9 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-frontend
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK
-        uses: actions/setup-java@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v2
         with:
           java-version: '18'
           distribution: 'temurin'
@@ -37,23 +36,19 @@ jobs:
         with:
           name: frontend-build
           path: backend/src/main/resources/static
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.6.0
-        with:
-          mongodb-version: '5.0'
-      - name: Build with maven
+      - name: Build Backend
         run: mvn -B package --file backend/pom.xml
       - uses: actions/upload-artifact@v2
         with:
           name: backend-build
           path: backend/target/capstone-flag-game.jar
 
-  deploy-heroku:
+  deploy:
     runs-on: ubuntu-latest
     needs: build-backend
     environment:
-      name: production-heroku
-      url: https://y-capstone-project.herokuapp.com/
+      name: Produktion Heroku
+      url: https://y-capstone-project.herokuapp.com
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
     steps:
@@ -62,9 +57,9 @@ jobs:
         with:
           name: backend-build
           path: backend/target
-      - name: Login to heroku
+      - name: Login to Heroku
         run: heroku container:login
-      - name: Push docker container
+      - name: Push Docker Image
         run: heroku container:push web -a y-capstone-project
-      - name: Deploy docker container
+      - name: Release Docker Container
         run: heroku container:release web -a y-capstone-project

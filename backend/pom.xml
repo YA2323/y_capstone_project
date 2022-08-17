@@ -32,6 +32,7 @@
     </dependencies>
 
     <build>
+        <finalName>capstone-flag-game</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
