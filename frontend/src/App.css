@@ -1,0 +1,22 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: Athelas, serif;
+    font-size: 70px;
+}
+
+.btnFlag {
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+    font-size: 20px;
+}
+
+body {
+    background-color: #e8c48c;
+}
+
+.imgFlag {
+    margin-left: 570px;
+    margin-top: -320px;
+}
