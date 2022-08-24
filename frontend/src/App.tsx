@@ -1,6 +1,6 @@
 import React, {} from 'react';
 import './App.css';
-import RandomFlag from "./RandomFlag";
+import RandomFlag from "./components/RandomFlag";
 
 function App() {
 
