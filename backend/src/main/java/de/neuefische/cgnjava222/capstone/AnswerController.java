@@ -22,8 +22,8 @@ public class AnswerController {
     }
 
     @PostMapping
-    public ResponseEntity<Answer> addAnswer(@RequestBody Answer answer){
-        Answer saveAnswer = answerService.addAnswer(answer);
+    public ResponseEntity<Answer> addAnswer(@RequestBody NewAnswer newAnswer){
+        Answer saveAnswer = answerService.addAnswer(newAnswer);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(saveAnswer);

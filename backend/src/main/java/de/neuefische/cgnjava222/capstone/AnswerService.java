@@ -17,7 +17,12 @@ public class AnswerService {
         return answerRepo.findAll();
     }
 
-    public Answer addAnswer(Answer answer){
-        return answerRepo.save(new Answer(answer.answerContent()));
+    public Answer addAnswer(NewAnswer newAnswer) {
+
+        return answerRepo.save(new Answer(
+                UUID.randomUUID().toString(),
+                newAnswer.answerContent()
+        ));
+
     }
 }
