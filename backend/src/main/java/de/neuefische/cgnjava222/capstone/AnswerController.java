@@ -17,12 +17,12 @@ public class AnswerController {
     }
 
     @GetMapping
-    public List<Answer> listAnswers(){
+    public List<Answer> listAnswers() {
         return answerService.getAnswers();
     }
 
     @PostMapping
-    public ResponseEntity<Answer> addAnswer(@RequestBody NewAnswer newAnswer){
+    public ResponseEntity<Answer> addAnswer(@RequestBody NewAnswer newAnswer) {
         Answer saveAnswer = answerService.addAnswer(newAnswer);
         return ResponseEntity
                 .status(HttpStatus.CREATED)

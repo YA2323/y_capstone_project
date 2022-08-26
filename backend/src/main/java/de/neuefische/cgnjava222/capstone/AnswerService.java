@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+
 @Service
 public class AnswerService {
 
@@ -13,7 +14,7 @@ public class AnswerService {
         this.answerRepo = answerRepo;
     }
 
-    public List<Answer> getAnswers(){
+    public List<Answer> getAnswers() {
         return answerRepo.findAll();
     }
 

@@ -31,6 +31,7 @@ export default function RandomFlag(props: RandomFlagProps) {
         const index = randomCountries.indexOf(randomCountries[0])
         if (index > -1) {
             randomCountries.splice(index, 1)
+            setAnswer(randomCountries[0])
         }
     }
 
@@ -44,7 +45,6 @@ export default function RandomFlag(props: RandomFlagProps) {
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setAnswer(event.target.value)
-
     }
 
     return (
