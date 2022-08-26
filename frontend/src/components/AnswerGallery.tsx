@@ -1,7 +1,7 @@
 import {Answer} from "./Answer";
 
 type AnswerGalleryProps = {
-    allAnswers : Answer[]
+    allAnswers: Answer[]
 
 }
 
@@ -9,10 +9,10 @@ type AnswerGalleryProps = {
 export default function AnswerGallery(props: AnswerGalleryProps) {
 
 
-    return(
+    return (
         <>
             <div>
-                {props.allAnswers.map((element)=> <li key={element.id}> {element.answerContent} </li>)}
+                {props.allAnswers.map((element) => <li key={element.id}> {element.answerContent} </li>)}
             </div>
         </>
     )

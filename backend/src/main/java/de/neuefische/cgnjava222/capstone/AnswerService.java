@@ -24,6 +24,5 @@ public class AnswerService {
                 UUID.randomUUID().toString(),
                 newAnswer.answerContent()
         ));
-
     }
 }

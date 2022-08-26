@@ -1,4 +1,4 @@
 export type Answer = {
-    id :string
+    id: string
     answerContent: string
 }

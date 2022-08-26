@@ -20,7 +20,7 @@ export default function useAnswer() {
 
     const addAnswer = (answer: string) => {
 
-        const newAnswer : NewAnswer = {answerContent: answer}
+        const newAnswer: NewAnswer = {answerContent: answer}
         return axios.post("/answer", newAnswer)
             .then(getAllAnswers)
     }

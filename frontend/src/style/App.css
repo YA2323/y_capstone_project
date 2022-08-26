@@ -21,7 +21,7 @@ body {
     margin-top: -400px;
 }
 
-.answerBtns{
+.answerBtns {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 10px;
