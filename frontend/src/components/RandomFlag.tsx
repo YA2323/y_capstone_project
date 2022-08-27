@@ -3,7 +3,7 @@ import {Button} from "@mui/material";
 
 type RandomFlagProps = {
     addAnswer: (answer: string) => Promise<void>
-    addWrongAnswer : (wrongAnswer : string) => Promise<void>
+    addWrongAnswer: (wrongAnswer: string) => Promise<void>
 }
 
 const countries: string[] = ["usa", "cameroon", "Albania", "Andorra", "Austria",
@@ -23,7 +23,7 @@ const randomCountries = shuffle(countries)
 
 export default function RandomFlag(props: RandomFlagProps) {
 
-    const [flagURL, setFlagURL] = useState("https://countryflagsapi.com/png/")
+    const [flagURL, setFlagURL] = useState("https://countryflagsapi.com/png/" + randomCountries[0])
 
     const handleClickBtnFlag = () => {
         const url = "https://countryflagsapi.com/png/";
@@ -36,13 +36,13 @@ export default function RandomFlag(props: RandomFlagProps) {
         }
     }
 
-    const [answer, setAnswer] = useState<string>("")
+    const [answer, setAnswer] = useState<string>(randomCountries[0])
 
-    const wrongAnswer = "wrongAnswer"
+    const wrongAnswer = "Wrong Answer!"
 
     const handleSubmitTrue = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        props.addAnswer(answer)
+        props.addAnswer(answer + " - Right Answer!")
             .then(() => setAnswer(randomCountries[0]))
     }
 
@@ -64,13 +64,14 @@ export default function RandomFlag(props: RandomFlagProps) {
 
             <form onSubmit={handleSubmitTrue}>
                 <div className={"answerBtns"}>
-                    <button value={answer} onChange={() => handleChangeTrue} type={"submit"}>{randomCountries[0]}</button>
+                    <button value={answer} onChange={() => handleChangeTrue}
+                            type={"submit"}>{randomCountries[0]}</button>
                 </div>
             </form>
 
             <form onSubmit={handleSubmitFalse}>
-                <div >
-                    <button >{randomCountries[4]}</button>
+                <div className={"answerBtns"}>
+                    <button>{randomCountries[4]}</button>
                     <button>{randomCountries[8]}</button>
                     <button>{randomCountries[10]}</button>
                 </div>
