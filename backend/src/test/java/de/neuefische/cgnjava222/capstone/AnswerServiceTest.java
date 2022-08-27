@@ -1,6 +1,10 @@
 package de.neuefische.cgnjava222.capstone;
 
 
+import de.neuefische.cgnjava222.capstone.answer.Answer;
+import de.neuefische.cgnjava222.capstone.answer.AnswerRepo;
+import de.neuefische.cgnjava222.capstone.answer.AnswerService;
+import de.neuefische.cgnjava222.capstone.answer.NewAnswer;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
