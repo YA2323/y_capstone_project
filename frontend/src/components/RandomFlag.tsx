@@ -59,21 +59,21 @@ export default function RandomFlag(props: RandomFlagProps) {
     return (
         <>
             <div className={"btnFlag"}>
-                <Button variant="contained" onClick={handleClickBtnFlag}>Next Flag</Button>
+                <Button id={"b0"} variant="contained" onClick={handleClickBtnFlag}>Next Flag</Button>
             </div>
 
             <form onSubmit={handleSubmitTrue}>
-                <div className={"answerBtns"}>
-                    <button value={answer} onChange={() => handleChangeTrue}
+                <div className={"answerBtns"} >
+                    <button id={"b1"} value={answer} onChange={() => handleChangeTrue}
                             type={"submit"}>{randomCountries[0]}</button>
                 </div>
             </form>
 
             <form onSubmit={handleSubmitFalse}>
                 <div className={"answerBtns"}>
-                    <button>{randomCountries[4]}</button>
-                    <button>{randomCountries[8]}</button>
-                    <button>{randomCountries[10]}</button>
+                    <button id={"b2"} >{randomCountries[4]}</button>
+                    <button id={"b3"} >{randomCountries[8]}</button>
+                    <button id={"b4"}>{randomCountries[10]}</button>
                 </div>
             </form>
 
