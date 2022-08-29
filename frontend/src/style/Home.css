@@ -1,0 +1,43 @@
+.contBtns {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+
+}
+
+#EuBtn {
+    width: 450px;
+    height: 90px;
+}
+
+#AsianBtn {
+    width: 450px;
+    height: 90px;
+}
+
+#AfricaBtn {
+    width: 450px;
+    height: 90px;
+}
+
+#NorthBtn {
+    width: 450px;
+    height: 90px;
+}
+
+#SouthBtn {
+    width: 450px;
+    height: 90px;
+}
+
+#RndmBtn{
+    width: 450px;
+    height: 90px;
+}
+
+.contBtns2 {
+    background-color: #58b273;
+    font-size: 30px;
+    font-family: "Baloo Tammudu 2", sans-serif;
+}

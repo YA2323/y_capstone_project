@@ -3,6 +3,7 @@ import {Button} from "@mui/material";
 
 type RandomFlagProps = {
     addAnswer: (answer: string) => Promise<void>
+    addWrongAnswer: (wrongAnswer: string) => Promise<void>
 }
 
 const countries: string[] = ["usa", "cameroon", "Albania", "Andorra", "Austria",
@@ -22,9 +23,9 @@ const randomCountries = shuffle(countries)
 
 export default function RandomFlag(props: RandomFlagProps) {
 
-    const [flagURL, setFlagURL] = useState("https://countryflagsapi.com/png/")
+    const [flagURL, setFlagURL] = useState("https://countryflagsapi.com/png/" + randomCountries[0])
 
-    const handleClickBtn = () => {
+    const handleClickBtnFlag = () => {
         const url = "https://countryflagsapi.com/png/";
         setFlagURL(url + randomCountries[1]);
 
@@ -35,31 +36,47 @@ export default function RandomFlag(props: RandomFlagProps) {
         }
     }
 
-    const [answer, setAnswer] = useState<string>("")
+    const [answer, setAnswer] = useState<string>(randomCountries[0])
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const wrongAnswer = "Wrong Answer!"
+
+    const handleSubmitTrue = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        props.addAnswer(answer)
+        props.addAnswer(answer + " - Right Answer!")
             .then(() => setAnswer(randomCountries[0]))
     }
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChangeTrue = (event: ChangeEvent<HTMLInputElement>) => {
         setAnswer(event.target.value)
+    }
+
+    const handleSubmitFalse = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        props.addWrongAnswer(wrongAnswer)
+
     }
 
     return (
         <>
             <div className={"btnFlag"}>
-                <Button variant="contained" onClick={handleClickBtn}>Next Flag</Button>
+                <Button id={"b0"} variant="contained" onClick={handleClickBtnFlag}>Next Flag</Button>
             </div>
-            <form onSubmit={handleSubmit}>
-                <div className={"answerBtns"}>
-                    <button value={answer} onChange={() => handleChange} type={"submit"}>{randomCountries[0]}</button>
-                    <button>{randomCountries[4]}</button>
-                    <button>{randomCountries[8]}</button>
-                    <button>{randomCountries[10]}</button>
+
+            <form onSubmit={handleSubmitTrue}>
+                <div className={"answerBtns"} >
+                    <button id={"b1"} value={answer} onChange={() => handleChangeTrue}
+                            type={"submit"}>{randomCountries[0]}</button>
                 </div>
             </form>
+
+            <form onSubmit={handleSubmitFalse}>
+                <div className={"answerBtns"}>
+                    <button id={"b2"} >{randomCountries[4]}</button>
+                    <button id={"b3"} >{randomCountries[8]}</button>
+                    <button id={"b4"}>{randomCountries[10]}</button>
+                </div>
+            </form>
+
             <div className={"imgFlag"}>
                 <img src={flagURL} alt={"flag"}/>
             </div>

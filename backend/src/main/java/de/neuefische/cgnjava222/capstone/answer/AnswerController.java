@@ -1,4 +1,4 @@
-package de.neuefische.cgnjava222.capstone;
+package de.neuefische.cgnjava222.capstone.answer;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

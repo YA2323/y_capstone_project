@@ -1,18 +1,17 @@
 import React, {} from 'react';
 import './style/App.css';
-import RandomFlag from "./components/RandomFlag";
-import AnswerGallery from "./components/AnswerGallery";
-import useAnswer from "./hooks/useAnswer";
+import Header from "./Pages/Header";
+import AllRoutes from "./Pages/AllRoutes";
+import {HashRouter} from "react-router-dom";
 
 function App() {
 
-    const {answerContent, addAnswer} = useAnswer();
-
     return (
         <>
-            <h1>FLAG GAME</h1>
-            <RandomFlag addAnswer={addAnswer}/>
-            <AnswerGallery allAnswers={answerContent}/>
+            <HashRouter>
+            <Header/>
+            <AllRoutes/>
+            </HashRouter>
         </>
     );
 }
