@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import './style/App.css';
-import Header from "./Pages/Header";
-import AllRoutes from "./Pages/AllRoutes";
+import Header from "./components/Header";
+import AllRoutes from "./components/AllRoutes";
 import {HashRouter} from "react-router-dom";
 
 function App() {
