@@ -26,8 +26,8 @@ class AnswerIntegrationTest {
 
         mockMvc.perform(get("/answer"))
                 .andExpect(status().isOk())
-                .andExpect(content().json(""" 
-                        [] 
+                .andExpect(content().json("""
+                        []
                         """));
     }
 
@@ -37,42 +37,13 @@ class AnswerIntegrationTest {
         mockMvc.perform(post("/answer")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                {"answerContent" : "Germany"}
+                                {"answerTrueOrFalse" : "Germany"}
                                 """)
                 )
                 .andExpect(status().is(201))
                 .andExpect(content().json("""
-                          {"answerContent" : "Germany"}     
+                          {"answerTrueOrFalse" : "Germany"}
                         """)
                 );
     }
-
-
-    @DirtiesContext
-    @Test
-    void listWrongAnswers() throws Exception {
-
-        mockMvc.perform(get("/answer/wrong"))
-                .andExpect(status().isOk())
-                .andExpect(content().json(""" 
-                        []    
-                        """));
-    }
-
-    @Test
-    void addWrongAnswer() throws Exception {
-
-        mockMvc.perform(post("/answer/wrong")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("""
-                                {"wrongAnswer" : "Germany"}
-                                """)
-                )
-                .andExpect(status().is(201))
-                .andExpect(content().json("""
-                          {"wrongAnswer" : "Germany"}     
-                        """)
-                );
-    }
-
 }

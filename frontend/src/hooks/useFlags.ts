@@ -5,7 +5,13 @@ import {Flags} from "../components/Flags";
 
 export default function useFlags() {
 
-    const [randomFlags, setRandomFlags] = useState<Flags>({"rightFlagUrl": "","rightFlag": "","wrongFlagOne": "","wrongFlagTwo": "","wrongFlagThree": ""})
+    const [randomFlags, setRandomFlags] = useState<Flags>({
+        "rightFlagUrl": "",
+        "rightFlag": "",
+        "wrongFlagOne": "",
+        "wrongFlagTwo": "",
+        "wrongFlagThree": ""
+    })
 
 
     const getRandomEuroFlags = () => {
@@ -14,5 +20,5 @@ export default function useFlags() {
             .then(setRandomFlags)
     }
 
-    return{randomFlags, getRandomEuroFlags}
+    return {randomFlags, getRandomEuroFlags}
 }
