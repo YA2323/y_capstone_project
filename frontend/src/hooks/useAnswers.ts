@@ -24,5 +24,5 @@ export default function useAnswer() {
             .then(getAllAnswers)
     }
 
-    return {addAnswer,answerTrueOrFalse}
+    return {addAnswer, answerTrueOrFalse}
 }

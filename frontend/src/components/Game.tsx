@@ -1,14 +1,18 @@
 import {Button} from "@mui/material";
 import useFlags from "../hooks/useFlags";
 import "../style/Game.css"
-import useAnswer from "../hooks/useAnswers";
 import {useEffect, useState} from "react";
+import AnswerGallery from "./AnswerGallery";
+import {Answer} from "./Answer";
 
+type GameProps = {
+    answerTrueOrFalse: Answer[],
+    addAnswer: (answer: string) => Promise<void>
+}
 
-export default function Game() {
+export default function Game(props: GameProps) {
 
     const {randomFlags, getRandomEuroFlags} = useFlags()
-    const {addAnswer} = useAnswer()
 
     const [randomShuffledFlags, setRandomShuffledFlags] = useState<string[]>([])
 
@@ -20,9 +24,11 @@ export default function Game() {
 
     const handleAnswerB1Click = () => {
         if (randomShuffledFlags.at(0) === randomFlags.rightFlag) {
-            addAnswer(randomShuffledFlags.at(0) + " - RIGHT ANSWER!")
+            props.addAnswer(randomShuffledFlags.at(0) + " - RIGHT ANSWER!")
+                .then()
         } else {
-            addAnswer(randomShuffledFlags.at(0) + " - WRONG ANSWER!")
+            props.addAnswer(randomShuffledFlags.at(0) + " - WRONG ANSWER!")
+                .then()
         }
     }
 
@@ -56,6 +62,7 @@ export default function Game() {
                 <img src={randomFlags.rightFlagUrl} alt={"CLICK TO START THE GAME!"}/>
             </div>
 
+            <AnswerGallery allAnswers={props.answerTrueOrFalse}/>
         </>
     )
 }
