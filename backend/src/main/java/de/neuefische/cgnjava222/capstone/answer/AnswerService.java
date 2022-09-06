@@ -1,5 +1,4 @@
 package de.neuefische.cgnjava222.capstone.answer;
-
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +21,7 @@ public class AnswerService {
 
         return answerRepo.save(new Answer(
                 UUID.randomUUID().toString(),
-                newAnswer.answerContent()
+                newAnswer.answerTrueOrFalse()
         ));
     }
 }

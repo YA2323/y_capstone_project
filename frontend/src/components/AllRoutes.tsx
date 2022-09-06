@@ -8,7 +8,7 @@ export default function AllRoutes() {
     return (
         <>
             <Routes>
-                <Route path={"/game"} element={<Game/>}/>
+                <Route path={"/game"} element={<Game/>} />
                 <Route path={"/"} element={<Home/>}/>
             </Routes>
         </>
