@@ -3,15 +3,16 @@ import Home from "./Home";
 import Game from "./Game";
 import useAnswer from "../hooks/useAnswers";
 
+
 export default function AllRoutes() {
 
 
-    const {addAnswer, answerTrueOrFalse} = useAnswer()
+    const {addAnswer, answerTrueOrFalse,deleteAllAnswers} = useAnswer()
 
     return (
         <>
             <Routes>
-                <Route path={"/game"} element={<Game answerTrueOrFalse={answerTrueOrFalse} addAnswer={addAnswer}/>}/>
+                <Route path={"/game"} element={<Game answerTrueOrFalse={answerTrueOrFalse} addAnswer={addAnswer} deleteAllAnswers={deleteAllAnswers}/>}/>
                 <Route path={"/"} element={<Home/>}/>
             </Routes>
         </>

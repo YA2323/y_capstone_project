@@ -8,6 +8,7 @@ import {Answer} from "./Answer";
 type GameProps = {
     answerTrueOrFalse: Answer[],
     addAnswer: (answer: string) => Promise<void>
+    deleteAllAnswers: (id: string) => void
 }
 
 export default function Game(props: GameProps) {
@@ -62,7 +63,7 @@ export default function Game(props: GameProps) {
                 <img src={randomFlags.rightFlagUrl} alt={"CLICK TO START THE GAME!"}/>
             </div>
 
-            <AnswerGallery allAnswers={props.answerTrueOrFalse}/>
+            <AnswerGallery allAnswers={props.answerTrueOrFalse} deleteAllAnswers={props.deleteAllAnswers}/>
         </>
     )
 }

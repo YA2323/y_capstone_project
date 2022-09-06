@@ -27,7 +27,7 @@ public class AnswerService {
 
     public boolean deleteAllAnswers(String id){
         if(answerRepo.existsById(id)) {
-            answerRepo.deleteAll();
+            answerRepo.deleteById(id);
             return true;
         }
         else return false;
