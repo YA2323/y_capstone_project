@@ -8,13 +8,13 @@ function App() {
 
     useEffect(() => {
         document.title = "GUESS THE FLAG"
-    },[])
+    }, [])
 
     return (
         <>
             <HashRouter>
-            <Header/>
-            <AllRoutes/>
+                <Header/>
+                <AllRoutes/>
             </HashRouter>
         </>
     );
