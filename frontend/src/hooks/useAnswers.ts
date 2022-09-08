@@ -2,6 +2,7 @@ import axios from "axios";
 import {NewAnswer} from "../components/NewAnswer";
 import {useEffect, useState} from "react";
 import {Answer} from "../components/Answer";
+import {toast} from "react-toastify";
 
 export default function useAnswer() {
 
@@ -10,6 +11,13 @@ export default function useAnswer() {
     useEffect(() => {
         getAllAnswers()
     }, [])
+
+    const onErrorFunction = (error: Error) => {
+        toast.error(error.message, {
+                position: toast.POSITION.TOP_LEFT
+            }
+        )
+    }
 
     const getAllAnswers = () => {
         axios.get("/answer")
@@ -24,5 +32,14 @@ export default function useAnswer() {
             .then(getAllAnswers)
     }
 
-    return {addAnswer, answerTrueOrFalse}
+    const deleteAllAnswers = (id: string) => {
+        return axios.delete(`/answer/${id}`)
+            .then(getAllAnswers)
+            .catch(
+                error => {
+                    onErrorFunction(error)
+                })
+    }
+
+    return {addAnswer, answerTrueOrFalse, deleteAllAnswers}
 }

@@ -2,11 +2,8 @@ import {Button} from "@mui/material";
 import useFlags from "../hooks/useFlags";
 import "../style/Game.css"
 import {useEffect, useState} from "react";
-import AnswerGallery from "./AnswerGallery";
-import {Answer} from "./Answer";
 
 type GameProps = {
-    answerTrueOrFalse: Answer[],
     addAnswer: (answer: string) => Promise<void>
 }
 
@@ -62,7 +59,6 @@ export default function Game(props: GameProps) {
                 <img src={randomFlags.rightFlagUrl} alt={"CLICK TO START THE GAME!"}/>
             </div>
 
-            <AnswerGallery allAnswers={props.answerTrueOrFalse}/>
         </>
     )
 }

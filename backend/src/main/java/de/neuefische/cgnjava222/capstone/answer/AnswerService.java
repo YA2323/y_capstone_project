@@ -24,4 +24,13 @@ public class AnswerService {
                 newAnswer.answerTrueOrFalse()
         ));
     }
+
+    public boolean deleteAllAnswers(String id){
+        if(answerRepo.existsById(id)) {
+            answerRepo.deleteAll();
+            return true;
+        }
+        else return false;
+    }
+
 }
