@@ -1,19 +1,19 @@
 import {Answer} from "./Answer";
 import DeleteAnswers from "./DeleteAnswers";
-
-type AnswerGalleryProps = {
+import "../style/GameHistory.css"
+type gameHistoryProps = {
     allAnswers: Answer[],
     deleteAllAnswers: (id: string) => void
 
 }
 
-
-export default function AnswerGallery(props: AnswerGalleryProps) {
+export default function GameHistory(props: gameHistoryProps) {
 
 
     return (
         <>
-            <div>
+            <div className={"answerHistory"}>
+                <h2>GAME HISTORY</h2>
                 {props.allAnswers.map((element) => <li key={element.id}> {element.answerTrueOrFalse} <DeleteAnswers answer={element} deleteAllAnswers={props.deleteAllAnswers} /></li>)}
             </div>
         </>

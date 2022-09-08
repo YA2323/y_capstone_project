@@ -1,9 +1,13 @@
+h2{
+    text-align: center;
+}
+
 .contBtns {
     display: flex;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 20px;
-
+    padding:2px;
 }
 
 #EuBtn {

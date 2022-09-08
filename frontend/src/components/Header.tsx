@@ -9,7 +9,7 @@ export default function Header() {
             <h1>GUESS THE FLAG</h1>
             <nav className={"menu"}>
                 <NavLink className={"nav"} to={"/"}>HOME</NavLink>
-                <NavLink className={"nav"} to={"/game"}>GAME</NavLink>
+                <NavLink className={"nav"} to={"/game/history"}>HISTORY</NavLink>
             </nav>
         </header>
     )
