@@ -3,6 +3,7 @@ import './style/App.css';
 import Header from "./components/Header";
 import AllRoutes from "./components/AllRoutes";
 import {HashRouter} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
                 <Header/>
                 <AllRoutes/>
             </HashRouter>
+            <ToastContainer/>
         </>
     );
 }

@@ -21,7 +21,8 @@ public class AnswerService {
 
         return answerRepo.save(new Answer(
                 UUID.randomUUID().toString(),
-                newAnswer.answerTrueOrFalse()
+                newAnswer.answerTrueOrFalse(),
+                newAnswer.points()
         ));
     }
 
@@ -32,5 +33,4 @@ public class AnswerService {
         }
         else return false;
     }
-
 }

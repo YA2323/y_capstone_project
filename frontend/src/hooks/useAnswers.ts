@@ -6,7 +6,7 @@ import {toast} from "react-toastify";
 
 export default function useAnswer() {
 
-    const [answerTrueOrFalse, setAnswerTrueOrFalse] = useState<Answer[]>([])
+    const [answerAndPoints, setAnswerAndPoints] = useState<Answer[]>([])
 
     useEffect(() => {
         getAllAnswers()
@@ -22,12 +22,12 @@ export default function useAnswer() {
     const getAllAnswers = () => {
         axios.get("/answer")
             .then((response) => response.data)
-            .then(setAnswerTrueOrFalse)
+            .then(setAnswerAndPoints)
     }
 
-    const addAnswer = (answer: string) => {
+    const addAnswer = (answer: string, points : string) => {
 
-        const newAnswer: NewAnswer = {answerTrueOrFalse: answer}
+        const newAnswer: NewAnswer = {answerTrueOrFalse: answer, points : points}
         return axios.post("/answer", newAnswer)
             .then(getAllAnswers)
     }
@@ -41,5 +41,5 @@ export default function useAnswer() {
                 })
     }
 
-    return {addAnswer, answerTrueOrFalse, deleteAllAnswers}
+    return {addAnswer, answerAndPoints, deleteAllAnswers}
 }

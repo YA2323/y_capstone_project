@@ -14,7 +14,7 @@ export default function GameHistory(props: gameHistoryProps) {
         <>
             <div className={"answerHistory"}>
                 <h2>GAME HISTORY</h2>
-                {props.allAnswers.map((element) => <li key={element.id}> {element.answerTrueOrFalse} <DeleteAnswers answer={element} deleteAllAnswers={props.deleteAllAnswers} /></li>)}
+                {props.allAnswers.map((element) => <li key={element.id}> {element.answerTrueOrFalse} {element.points} <DeleteAnswers answer={element} deleteAllAnswers={props.deleteAllAnswers} /></li>)}
             </div>
         </>
     )
