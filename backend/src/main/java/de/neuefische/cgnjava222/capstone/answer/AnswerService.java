@@ -33,4 +33,12 @@ public class AnswerService {
         }
         else return false;
     }
+
+ /*
+
+    public void deleteAll(){
+        answerRepo.deleteAll();
+    }
+
+  */
 }

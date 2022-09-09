@@ -11,6 +11,7 @@ body {
     width: 20%;
     margin-top: 50px;
     font-size: 50px;
+    text-align: center;
     color: aliceblue;
 }
 
@@ -22,6 +23,8 @@ body {
     border-width: 2.2px;
     border-style: solid;
     border-color: black;
+    width: 160px;
+    height: 60px;
     font-size: 20px;
     background-color: #2257e8;
 }
@@ -84,4 +87,12 @@ body {
     background-color: #d8bb70;
     color: black;
     border-radius: 0.9em;
+}
+
+
+#points{
+    position: fixed;
+    top: 250px;
+    left: 1150px;
+    font-size: 30px;
 }

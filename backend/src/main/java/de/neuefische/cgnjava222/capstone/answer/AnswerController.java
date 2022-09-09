@@ -28,9 +28,20 @@ public class AnswerController {
                 .status(HttpStatus.CREATED)
                 .body(saveAnswer);
     }
+
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteAllAnswers(@PathVariable String id) {
         boolean deleteSuccess = answerService.deleteAllAnswers(id);
         return new ResponseEntity<>(deleteSuccess ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND);
     }
+
+    /*
+    @DeleteMapping
+    @ResponseBody
+    public String deleteAll(){
+        answerService.deleteAll();
+        return "SUCCESSFULLY DELETED";
+    }
+
+     */
 }

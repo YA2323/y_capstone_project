@@ -41,5 +41,14 @@ export default function useAnswer() {
                 })
     }
 
+
+    /*
+    const deleteAllAnswers = () => {
+        axios.delete("/answer")
+            .then(getAllAnswers)
+    }
+
+
+     */
     return {addAnswer, answerAndPoints, deleteAllAnswers}
 }
