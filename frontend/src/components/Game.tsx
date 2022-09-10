@@ -4,6 +4,8 @@ import "../style/Game.css"
 import {useEffect, useState} from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import {useLocation} from "react-router-dom";
+import {toast} from "react-toastify";
+import useShuffle from "../hooks/useShuffle";
 
 type GameProps = {
     addAnswer: (answer: string, points: string) => Promise<void>
@@ -11,7 +13,8 @@ type GameProps = {
 
 export default function Game(props: GameProps) {
 
-    const {randomFlags, getRandomEuroFlags, getRandomAsianFlags, shuffle, notifyTrue, notifyFalse} = useFlags()
+    const {shuffle} = useShuffle()
+    const {randomFlags, getRandomEuroFlags, getRandomAsianFlags} = useFlags()
     const [randomShuffledFlags, setRandomShuffledFlags] = useState<string[]>([])
 
     const [actualPoints, setActualPoints] = useState(0)
@@ -29,6 +32,32 @@ export default function Game(props: GameProps) {
         const shuffledFlags = shuffle(flagAnswers)
         setRandomShuffledFlags(shuffledFlags)
     }, [randomFlags])
+
+    const notifyTrue = () => {
+        toast.success('Good Job!     + 5 Points', {
+            theme: "colored",
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
+    const notifyFalse = () => {
+        toast.error('Sorry, wrong Answer!     0 Points', {
+            theme: "colored",
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
 
     const handleAnswerB1Click = () => {
         if (randomShuffledFlags.at(0) === randomFlags.rightFlag) {
@@ -48,12 +77,12 @@ export default function Game(props: GameProps) {
 
     const handleAnswerB2Click = () => {
         if (randomShuffledFlags.at(1) === randomFlags.rightFlag) {
-            props.addAnswer(randomShuffledFlags.at(1) + " - RIGHT ANSWER!  ", "  + 5 Points")
+            props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(1) + " - RIGHT ANSWER!  ", "  + 5 Points")
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
         } else {
-            props.addAnswer(randomShuffledFlags.at(1) + " - WRONG ANSWER!  ", "  0 Points")
+            props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(1) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
         }
@@ -63,12 +92,12 @@ export default function Game(props: GameProps) {
 
     const handleAnswerB3Click = () => {
         if (randomShuffledFlags.at(2) === randomFlags.rightFlag) {
-            props.addAnswer(randomShuffledFlags.at(2) + " - RIGHT ANSWER!  ", "  + 5 Points")
+            props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(2) + " - RIGHT ANSWER!  ", "  + 5 Points")
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
         } else {
-            props.addAnswer(randomShuffledFlags.at(2) + " - WRONG ANSWER!  ", "  0 Points")
+            props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(2) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
         }
@@ -78,12 +107,12 @@ export default function Game(props: GameProps) {
 
     const handleAnswerB4Click = () => {
         if (randomShuffledFlags.at(3) === randomFlags.rightFlag) {
-            props.addAnswer(randomShuffledFlags.at(3) + " - RIGHT ANSWER!  ", "  + 5 Points")
+            props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(3) + " - RIGHT ANSWER!  ", "  + 5 Points")
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
         } else {
-            props.addAnswer(randomShuffledFlags.at(3) + " - WRONG ANSWER!  ", "  0 Points")
+            props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(3) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
         }
