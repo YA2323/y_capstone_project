@@ -1,4 +1,5 @@
 package de.neuefische.cgnjava222.capstone.answer;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,16 +22,15 @@ public class AnswerService {
 
         return answerRepo.save(new Answer(
                 UUID.randomUUID().toString(),
-                newAnswer.answerTrueOrFalse()
+                newAnswer.answerTrueOrFalse(),
+                newAnswer.points()
         ));
     }
 
-    public boolean deleteAllAnswers(String id){
-        if(answerRepo.existsById(id)) {
+    public boolean deleteAllAnswers(String id) {
+        if (answerRepo.existsById(id)) {
             answerRepo.deleteAll();
             return true;
-        }
-        else return false;
+        } else return false;
     }
-
 }

@@ -8,14 +8,14 @@ import GameHistory from "./GameHistory";
 export default function AllRoutes() {
 
 
-    const {addAnswer, answerTrueOrFalse,deleteAllAnswers} = useAnswer()
+    const {addAnswer, answerAndPoints,deleteAllAnswers} = useAnswer()
 
     return (
         <>
             <Routes>
                 <Route path={"/"} element={<Home/>}/>
                 <Route path={"/game"} element={<Game addAnswer={addAnswer}/>}/>
-                <Route path={"/game/history"} element={<GameHistory allAnswers={answerTrueOrFalse} deleteAllAnswers={deleteAllAnswers}/>}/>
+                <Route path={"/game/history"} element={<GameHistory allAnswers={answerAndPoints} deleteAllAnswers={deleteAllAnswers}/>}/>
             </Routes>
         </>
     )
