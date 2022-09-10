@@ -10,8 +10,8 @@ export default function Home() {
         <>
             <h2>CHOOSE GAME MODE</h2>
             <div className={"contBtns"}>
-                <button onClick={() => navigate("/game")} className={"contBtns2"} id={"EuBtn"}>EUROPEN FLAGS</button>
-                <button className={"contBtns2"} id={"AsianBtn"}>ASIAN FLAGS</button>
+                <button onClick={() => navigate("/game/europe")} className={"contBtns2"} id={"EuBtn"}>EUROPEN FLAGS</button>
+                <button onClick={() => navigate("/game/asia")} className={"contBtns2"} id={"AsianBtn"}>ASIAN FLAGS</button>
                 <button className={"contBtns2"} id={"AfricaBtn"}>AFRICAN FLAGS</button>
                 <button className={"contBtns2"} id={"NorthBtn"}>NORTH AMERICAN FLAGS</button>
                 <button className={"contBtns2"} id={"SouthBtn"}>SOUTH AMERICAN FLAGS</button>
