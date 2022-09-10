@@ -9,13 +9,13 @@ export default function Home() {
     return (
         <>
             <h2>CHOOSE GAME MODE</h2>
-            <div className={"contBtns"}>
-                <button onClick={() => navigate("/game/europe")} className={"contBtns2"} id={"EuBtn"}>EUROPEN FLAGS</button>
-                <button onClick={() => navigate("/game/asia")} className={"contBtns2"} id={"AsianBtn"}>ASIAN FLAGS</button>
-                <button className={"contBtns2"} id={"AfricaBtn"}>AFRICAN FLAGS</button>
-                <button className={"contBtns2"} id={"NorthBtn"}>NORTH AMERICAN FLAGS</button>
-                <button className={"contBtns2"} id={"SouthBtn"}>SOUTH AMERICAN FLAGS</button>
-                <button className={"contBtns2"} id={"RndmBtn"}>RANDOM FLAGS</button>
+            <div className={"continentButtons"}>
+                <button onClick={() => navigate("/game/europe")} className={"continentsBtn"} id={"EuBtn"}>EUROPEAN FLAGS</button>
+                <button onClick={() => navigate("/game/asia")} className={"continentsBtn"} id={"AsianBtn"}>ASIAN FLAGS</button>
+                <button className={"continentsBtn"} id={"AfricaBtn"}>AFRICAN FLAGS</button>
+                <button className={"continentsBtn"} id={"NorthBtn"}>NORTH AMERICAN FLAGS</button>
+                <button className={"continentsBtn"} id={"SouthBtn"}>SOUTH AMERICAN FLAGS</button>
+                <button className={"continentsBtn"} id={"randomBtn"}>RANDOM FLAGS</button>
             </div>
         </>
     )

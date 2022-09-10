@@ -5,7 +5,6 @@ import {useEffect, useState} from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import {useLocation} from "react-router-dom";
 import {toast} from "react-toastify";
-import useShuffle from "../hooks/useShuffle";
 
 type GameProps = {
     addAnswer: (answer: string, points: string) => Promise<void>
@@ -13,7 +12,6 @@ type GameProps = {
 
 export default function Game(props: GameProps) {
 
-    const {shuffle} = useShuffle()
     const {randomFlags, getRandomEuroFlags, getRandomAsianFlags} = useFlags()
     const [randomShuffledFlags, setRandomShuffledFlags] = useState<string[]>([])
 
@@ -32,6 +30,16 @@ export default function Game(props: GameProps) {
         const shuffledFlags = shuffle(flagAnswers)
         setRandomShuffledFlags(shuffledFlags)
     }, [randomFlags])
+
+
+    const shuffle = ([...arr]) => {
+        let m = arr.length;
+        while (m) {
+            const i = Math.floor(Math.random() * m--);
+            [arr[m], arr[i]] = [arr[i], arr[m]];
+        }
+        return arr;
+    }
 
     const notifyTrue = () => {
         toast.success('Good Job!     + 5 Points', {
