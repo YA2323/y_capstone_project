@@ -8,14 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/flag")
 public class FlagController {
 
-    private final EuropeFlagService europeFlagService;
+    private final FlagService flagService;
 
-    public FlagController(EuropeFlagService europeFlagService) {
-        this.europeFlagService = europeFlagService;
+    public FlagController(FlagService flagService) {
+        this.flagService = flagService;
     }
 
     @GetMapping(path = "/europe")
-    Flags getRandomFlags() {
-        return europeFlagService.getRandomEuropeCountries();
+    Flags getRandomEuropeFlags() {
+        return flagService.getRandomEuropeCountries();
+    }
+
+    @GetMapping(path = "/asia")
+    Flags getRandomAsianFlags() {
+        return flagService.getRandomAsianCountries();
     }
 }

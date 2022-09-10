@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -13,7 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class EuropeFlagIntegrationTest {
+class FlagIntegrationTest {
 
     @Autowired
     MockMvc mockMvc;
@@ -23,6 +22,18 @@ class EuropeFlagIntegrationTest {
     void getRandomEuropeCountries() throws Exception {
 
         mockMvc.perform(get("/flag/europe"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(""" 
+                        {}
+                        """));
+    }
+
+
+    @DirtiesContext
+    @Test
+    void getRandomAsianCountries() throws Exception {
+
+        mockMvc.perform(get("/flag/asia"))
                 .andExpect(status().isOk())
                 .andExpect(content().json(""" 
                         {}
