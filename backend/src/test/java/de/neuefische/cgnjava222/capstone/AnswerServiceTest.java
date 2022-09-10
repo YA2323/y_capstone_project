@@ -20,9 +20,9 @@ class AnswerServiceTest {
     @Test
     void getAnswers() {
         List<Answer> answers = List.of(
-                new Answer("1", "Germany"),
-                new Answer("2", "Albania"),
-                new Answer("3", "France")
+                new Answer("1", "Germany","0"),
+                new Answer("2", "Albania","5"),
+                new Answer("3", "France","0")
         );
 
         AnswerRepo answerRepo = mock(AnswerRepo.class);
@@ -32,9 +32,9 @@ class AnswerServiceTest {
 
         List<Answer> actual = answerService.getAnswers();
         List<Answer> expected = List.of(
-                new Answer("1", "Germany"),
-                new Answer("2", "Albania"),
-                new Answer("3", "France")
+                new Answer("1", "Germany", "0"),
+                new Answer("2", "Albania", "5"),
+                new Answer("3", "France", "0")
         );
         assertThat(actual).hasSameElementsAs(expected);
     }
@@ -42,14 +42,14 @@ class AnswerServiceTest {
     @Test
     void addAnswer() {
 
-        Answer answer = new Answer("1", "Germany");
+        Answer answer = new Answer("1", "Germany", "5");
 
         AnswerRepo answerRepo = mock(AnswerRepo.class);
         when(answerRepo.save(any(Answer.class)))
                 .thenReturn(answer);
 
         AnswerService answerService = new AnswerService(answerRepo);
-        Answer actual = answerService.addAnswer(new NewAnswer("Germany"));
+        Answer actual = answerService.addAnswer(new NewAnswer("Germany", "5"));
 
         assertThat(actual).isEqualTo(answer);
     }

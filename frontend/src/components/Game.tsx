@@ -19,7 +19,7 @@ export default function Game(props: GameProps) {
     const [possiblePoints, setPossiblePoints] = useState(0)
     const [startButtonText, setStartButtonText] = useState("START")
     const [showAnswerBtns, setShowAnswerBtns] = useState(false)
-    const [btnsDisabled,setBtnDisabled] = useState(false)
+    const [btnsDisabled, setBtnDisabled] = useState(false)
 
 
     const notifyTrue = () => {
@@ -131,21 +131,22 @@ export default function Game(props: GameProps) {
     return (
 
         <>
-
-
             <div id={"points"}>Points : {actualPoints} / {possiblePoints}</div>
 
             {showAnswerBtns && (
                 <div>
-                    <Button disabled={btnsDisabled} onClick={handleAnswerB1Click} id={"b1"}>{randomShuffledFlags.at(0)}</Button>
-                    <Button disabled={btnsDisabled} onClick={handleAnswerB2Click} id={"b2"}>{randomShuffledFlags.at(1)}</Button>
-                    <Button disabled={btnsDisabled} onClick={handleAnswerB3Click} id={"b3"}>{randomShuffledFlags.at(2)}</Button>
-                    <Button disabled={btnsDisabled} onClick={handleAnswerB4Click} id={"b4"}>{randomShuffledFlags.at(3)}</Button>
+                    <Button disabled={btnsDisabled} onClick={handleAnswerB1Click}
+                            id={"b1"}>{randomShuffledFlags.at(0)}</Button>
+                    <Button disabled={btnsDisabled} onClick={handleAnswerB2Click}
+                            id={"b2"}>{randomShuffledFlags.at(1)}</Button>
+                    <Button disabled={btnsDisabled} onClick={handleAnswerB3Click}
+                            id={"b3"}>{randomShuffledFlags.at(2)}</Button>
+                    <Button disabled={btnsDisabled} onClick={handleAnswerB4Click}
+                            id={"b4"}>{randomShuffledFlags.at(3)}</Button>
                 </div>
             )}
 
             <Button onClick={handleNextFlag} id={"b0"}>{startButtonText}</Button>
-
             <div className={"imgFlag"}>
                 <img src={randomFlags.rightFlagUrl} alt={"CLICK TO START THE GAME!"}/>
             </div>

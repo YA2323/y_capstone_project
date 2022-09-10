@@ -25,9 +25,9 @@ export default function useAnswer() {
             .then(setAnswerAndPoints)
     }
 
-    const addAnswer = (answer: string, points : string) => {
+    const addAnswer = (answer: string, points: string) => {
 
-        const newAnswer: NewAnswer = {answerTrueOrFalse: answer, points : points}
+        const newAnswer: NewAnswer = {answerTrueOrFalse: answer, points: points}
         return axios.post("/answer", newAnswer)
             .then(getAllAnswers)
     }
@@ -41,14 +41,5 @@ export default function useAnswer() {
                 })
     }
 
-
-    /*
-    const deleteAllAnswers = () => {
-        axios.delete("/answer")
-            .then(getAllAnswers)
-    }
-
-
-     */
     return {addAnswer, answerAndPoints, deleteAllAnswers}
 }

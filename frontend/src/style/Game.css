@@ -1,5 +1,4 @@
 
-
 body {
     background-color: #3e85e8
 }
@@ -15,7 +14,7 @@ body {
     color: aliceblue;
 }
 
-#b0{
+#b0 {
     position: fixed;
     top: 380px;
     left: 350px;
@@ -29,7 +28,7 @@ body {
     background-color: #2257e8;
 }
 
-#b1{
+#b1 {
     position: fixed;
     top: 520px;
     left: 520px;
@@ -44,7 +43,7 @@ body {
     border-radius: 0.9em;
 }
 
-#b2{
+#b2 {
     position: fixed;
     top: 600px;
     left: 520px;
@@ -59,7 +58,7 @@ body {
     border-radius: 0.9em;
 }
 
-#b3{
+#b3 {
     position: fixed;
     top: 600px;
     left: 780px;
@@ -74,7 +73,7 @@ body {
     border-radius: 0.9em;
 }
 
-#b4{
+#b4 {
     position: fixed;
     top: 520px;
     left: 780px;
@@ -90,7 +89,7 @@ body {
 }
 
 
-#points{
+#points {
     position: fixed;
     top: 250px;
     left: 1150px;
