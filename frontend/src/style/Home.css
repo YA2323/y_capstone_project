@@ -1,5 +1,7 @@
 h2 {
     text-align: center;
+    font-family: Gotu, serif;
+    text-decoration: underline;
 }
 
 .continentButtons {
@@ -13,35 +15,38 @@ h2 {
 #EuBtn {
     width: 450px;
     height: 90px;
+    font-family: Gotu, serif
 }
 
 #AsianBtn {
     width: 450px;
     height: 90px;
+    font-family: Gotu, serif;
+    background-color: #d57b77;
 }
 
 #AfricaBtn {
     width: 450px;
     height: 90px;
+    font-family: Gotu, serif;
+    background-color: #d2d976;
 }
 
 #NorthBtn {
     width: 450px;
     height: 90px;
-}
-
-#SouthBtn {
-    width: 450px;
-    height: 90px;
+    font-family: Gotu, serif;
+    background-color: #d7bd7b;
 }
 
 #randomBtn {
     width: 450px;
     height: 90px;
+    font-family: Gotu, serif;
+    background-color: #b695dc;
 }
 
 .continentsBtn {
-    background-color: #58b273;
-    font-size: 30px;
-    font-family: "Baloo Tammudu 2", sans-serif;
+    background-color: #5fbb7a;
+    font-size: 25px;
 }

@@ -159,7 +159,7 @@ export default function Game(props: GameProps) {
             )}
             <Button disabled={nextBtnDisabled} onClick={handleNextFlag} id={"b0"}>{startButtonText}</Button>
             <div className={"imgFlag"}>
-                <img src={randomFlags.rightFlagUrl} alt={"CLICK TO START THE GAME!"}/>
+                <img src={randomFlags.rightFlagUrl} alt={""}/>
             </div>
         </>
     )
