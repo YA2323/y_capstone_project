@@ -1,6 +1,9 @@
 .answerHistory {
     text-align: center;
     margin-top: 70px;
+    font-family: Gotu, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 h2 {

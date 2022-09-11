@@ -1,6 +1,7 @@
 
 body {
-    background-color: #3e85e8
+
+    background-color: #9dbcea;
 }
 
 .imgFlag {
@@ -26,6 +27,7 @@ body {
     height: 60px;
     font-size: 20px;
     background-color: #2257e8;
+    font-family: Gotu, serif;
 }
 
 #b1 {
@@ -38,9 +40,10 @@ body {
     border-width: 2.2px;
     border-style: solid;
     border-color: black;
-    background-color: #d8bb70;
+    background-color: #f0c678;
     color: black;
-    border-radius: 0.9em;
+    border-radius: 0.4em;
+    font-family: Gotu, serif;
 }
 
 #b2 {
@@ -53,9 +56,10 @@ body {
     border-width: 2.2px;
     border-style: solid;
     border-color: black;
-    background-color: #d8bb70;
+    background-color: #f0c678;
     color: black;
-    border-radius: 0.9em;
+    border-radius: 0.4em;
+    font-family: Gotu, serif;
 }
 
 #b3 {
@@ -68,9 +72,10 @@ body {
     border-width: 2.2px;
     border-style: solid;
     border-color: black;
-    background-color: #d8bb70;
+    background-color: #f0c678;
     color: black;
-    border-radius: 0.9em;
+    border-radius: 0.4em;
+    font-family: Gotu, serif;
 }
 
 #b4 {
@@ -83,9 +88,10 @@ body {
     border-width: 2.2px;
     border-style: solid;
     border-color: black;
-    background-color: #d8bb70;
+    background-color: #f0c678;
     color: black;
-    border-radius: 0.9em;
+    border-radius: 0.4em;
+    font-family: Gotu, serif;
 }
 
 
@@ -94,4 +100,6 @@ body {
     top: 250px;
     left: 1150px;
     font-size: 30px;
+    font-family: Gotu, serif;
+    font-weight: bold;
 }
