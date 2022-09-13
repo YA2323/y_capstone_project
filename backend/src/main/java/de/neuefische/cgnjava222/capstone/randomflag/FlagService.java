@@ -22,6 +22,14 @@ public class FlagService {
             , "Mongolia", "Malaysia", "Yemen", "Armenia", "Qatar", "Indonesia", "North Korea", "Pakistan", "Sri Lanka", "Kazakhstan", "Bahrain", "Cambodia"
             , "Bangladesh", "China", "Japan", "Cyprus", "Philippines", "Jordan", "India");
 
+    List<String> africanCountries = Arrays.asList("Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde ", "Cameroon", "Chad",
+            "Congo", "Democratic Republic of Congo", "Equatorial Guinea", "Guinea", "Eritrea", "Eswatini",
+            "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Kenya", "Lesotho", "Liberia", "Madagascar", "Malawi", "Mali", "Mauritania",
+            "Mauritius", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Seychelles",
+            "Sierra Leone", "South Africa", "Sudan", "South Sudan", "Tanzania", "Togo", "Uganda", "United Republic of Tanzania", "Zambia", "Zimbabwe",
+            "Morocco", "Egypt", "Tunisia");
+
+
     private Flags getRandomFlags(List<String> countryList) {
         Collections.shuffle(countryList);
 
@@ -40,5 +48,8 @@ public class FlagService {
 
     public Flags getRandomAsianCountries() {
         return getRandomFlags(asianCountries);
+    }
+
+    public Flags getRandomAfricanCountries() {return getRandomFlags(africanCountries);
     }
 }

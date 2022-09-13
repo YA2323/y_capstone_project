@@ -26,5 +26,11 @@ export default function useFlags() {
             .then(setRandomFlags)
     }
 
-    return {randomFlags, getRandomEuroFlags, getRandomAsianFlags}
+    const getRandomAfricanFlags = () => {
+        axios.get("/flag/africa")
+            .then((response) => response.data)
+            .then(setRandomFlags)
+    }
+
+    return {randomFlags, getRandomEuroFlags, getRandomAsianFlags, getRandomAfricanFlags}
 }

@@ -12,7 +12,7 @@ export default function Home() {
             <div className={"continentButtons"}>
                 <button onClick={() => navigate("/game/europe")} className={"continentsBtn"} id={"EuBtn"}>EUROPEAN FLAGS</button>
                 <button onClick={() => navigate("/game/asia")} className={"continentsBtn"} id={"AsianBtn"}>ASIAN FLAGS</button>
-                <button className={"continentsBtn"} id={"AfricaBtn"}>AFRICAN FLAGS</button>
+                <button onClick={() => navigate("/game/africa")} className={"continentsBtn"} id={"AfricaBtn"}>AFRICAN FLAGS</button>
                 <button className={"continentsBtn"} id={"NorthBtn"}>NORTH / SOUTH AMERICAN FLAGS</button>
                 <button className={"continentsBtn"} id={"randomBtn"}>RANDOM FLAGS</button>
             </div>

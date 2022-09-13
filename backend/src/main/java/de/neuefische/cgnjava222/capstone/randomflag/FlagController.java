@@ -23,4 +23,9 @@ public class FlagController {
     Flags getRandomAsianFlags() {
         return flagService.getRandomAsianCountries();
     }
+
+    @GetMapping(path = "/africa")
+    Flags getRandomAfricanFlags() {
+        return flagService.getRandomAfricanCountries();
+    }
 }
