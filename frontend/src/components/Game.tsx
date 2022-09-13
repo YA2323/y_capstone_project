@@ -12,7 +12,15 @@ type GameProps = {
 
 export default function Game(props: GameProps) {
 
-    const {randomFlags, getRandomEuroFlags, getRandomAsianFlags, getRandomAfricanFlags,getRandomAmericanFlags,getRandomAllFlags} = useFlags()
+    const {
+        randomFlags,
+        getRandomEuroFlags,
+        getRandomAsianFlags,
+        getRandomAfricanFlags,
+        getRandomAmericanFlags,
+        getRandomAllFlags
+    } = useFlags()
+
     const [randomShuffledFlags, setRandomShuffledFlags] = useState<string[]>([])
 
     const [actualPoints, setActualPoints] = useState(0)
@@ -21,6 +29,15 @@ export default function Game(props: GameProps) {
     const [showAnswerBtn, setShowAnswerBtn] = useState(false)
     const [answerBtnDisabled, setAnswerBtnDisabled] = useState(false)
     const [nextBtnDisabled, setNextBtnDisabled] = useState(false)
+
+    const green = "#7fb72c"
+    const red = "#EC5845FF"
+    const goldBrown = "#f5b848"
+    const [btn1Color, setBtn1Color] = useState(goldBrown)
+    const [btn2Color, setBtn2Color] = useState(goldBrown)
+    const [btn3Color, setBtn3Color] = useState(goldBrown)
+    const [btn4Color, setBtn4Color] = useState(goldBrown)
+
 
     const location = useLocation();
 
@@ -73,11 +90,20 @@ export default function Game(props: GameProps) {
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
+            setBtn1Color(green)
 
         } else {
             props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(0) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
+            setBtn1Color(red)
+            if (randomShuffledFlags.at(1) === randomFlags.rightFlag) {
+                setBtn2Color(green)
+            } else if (randomShuffledFlags.at(2) === randomFlags.rightFlag) {
+                setBtn3Color(green)
+            } else if (randomShuffledFlags.at(3) === randomFlags.rightFlag) {
+                setBtn4Color(green)
+            }
         }
         setAnswerBtnDisabled(true)
         setNextBtnDisabled(false)
@@ -89,10 +115,19 @@ export default function Game(props: GameProps) {
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
+            setBtn2Color(green)
         } else {
             props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(1) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
+            setBtn2Color(red)
+            if (randomShuffledFlags.at(0) === randomFlags.rightFlag) {
+                setBtn1Color(green)
+            } else if (randomShuffledFlags.at(2) === randomFlags.rightFlag) {
+                setBtn3Color(green)
+            } else if (randomShuffledFlags.at(3) === randomFlags.rightFlag) {
+                setBtn4Color(green)
+            }
         }
         setAnswerBtnDisabled(true)
         setNextBtnDisabled(false)
@@ -104,10 +139,19 @@ export default function Game(props: GameProps) {
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
+            setBtn3Color(green)
         } else {
             props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(2) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
+            setBtn3Color(red)
+            if (randomShuffledFlags.at(0) === randomFlags.rightFlag) {
+                setBtn1Color(green)
+            } else if (randomShuffledFlags.at(1) === randomFlags.rightFlag) {
+                setBtn2Color(green)
+            } else if (randomShuffledFlags.at(3) === randomFlags.rightFlag) {
+                setBtn4Color(green)
+            }
         }
         setAnswerBtnDisabled(true)
         setNextBtnDisabled(false)
@@ -119,10 +163,19 @@ export default function Game(props: GameProps) {
                 .then(notifyTrue)
             setActualPoints(actualPoints + 5)
             setPossiblePoints(possiblePoints + 5)
+            setBtn4Color(green)
         } else {
             props.addAnswer("FLAG : " + randomFlags.rightFlag + " - YOUR ANSWER : " + randomShuffledFlags.at(3) + " - WRONG ANSWER!  ", "  0 Points")
                 .then(notifyFalse)
             setPossiblePoints(possiblePoints + 5)
+            setBtn4Color(red)
+            if (randomShuffledFlags.at(0) === randomFlags.rightFlag) {
+                setBtn1Color(green)
+            } else if (randomShuffledFlags.at(1) === randomFlags.rightFlag) {
+                setBtn2Color(green)
+            } else if (randomShuffledFlags.at(2) === randomFlags.rightFlag) {
+                setBtn3Color(green)
+            }
         }
         setAnswerBtnDisabled(true)
         setNextBtnDisabled(false)
@@ -134,20 +187,21 @@ export default function Game(props: GameProps) {
             getRandomEuroFlags()
         } else if (location.pathname === "/game/asia") {
             getRandomAsianFlags()
-        }
-        else if (location.pathname === "/game/africa"){
+        } else if (location.pathname === "/game/africa") {
             getRandomAfricanFlags()
-        }
-        else if (location.pathname === "/game/america"){
+        } else if (location.pathname === "/game/america") {
             getRandomAmericanFlags()
-        }
-        else if (location.pathname === "/game/random"){
+        } else if (location.pathname === "/game/random") {
             getRandomAllFlags()
         }
         setStartButtonText("NEXT FLAG")
         setShowAnswerBtn(true)
         setAnswerBtnDisabled(false)
         setNextBtnDisabled(true)
+        setBtn1Color(goldBrown)
+        setBtn2Color(goldBrown)
+        setBtn3Color(goldBrown)
+        setBtn4Color(goldBrown)
     }
 
     return (
@@ -156,13 +210,13 @@ export default function Game(props: GameProps) {
             <div id={"points"}>Points : {actualPoints} / {possiblePoints}</div>
             {showAnswerBtn && (
                 <div>
-                    <Button disabled={answerBtnDisabled} onClick={handleAnswerB1Click}
+                    <Button style={{background: btn1Color}} disabled={answerBtnDisabled} onClick={handleAnswerB1Click}
                             id={"b1"}>{randomShuffledFlags.at(0)}</Button>
-                    <Button disabled={answerBtnDisabled} onClick={handleAnswerB2Click}
+                    <Button style={{background: btn2Color}} disabled={answerBtnDisabled} onClick={handleAnswerB2Click}
                             id={"b2"}>{randomShuffledFlags.at(1)}</Button>
-                    <Button disabled={answerBtnDisabled} onClick={handleAnswerB3Click}
+                    <Button style={{background: btn3Color}} disabled={answerBtnDisabled} onClick={handleAnswerB3Click}
                             id={"b3"}>{randomShuffledFlags.at(2)}</Button>
-                    <Button disabled={answerBtnDisabled} onClick={handleAnswerB4Click}
+                    <Button style={{background: btn4Color}} disabled={answerBtnDisabled} onClick={handleAnswerB4Click}
                             id={"b4"}>{randomShuffledFlags.at(3)}</Button>
                 </div>
             )}
