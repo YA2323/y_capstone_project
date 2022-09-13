@@ -15,38 +15,38 @@ h2 {
 #EuBtn {
     width: 450px;
     height: 90px;
-    font-family: Gotu, serif
+    font-family: Gotu, serif;
+    background-color: #3baf5d;
 }
 
 #AsianBtn {
     width: 450px;
     height: 90px;
     font-family: Gotu, serif;
-    background-color: #d57b77;
+    background-color: #e75a54;
 }
 
 #AfricaBtn {
     width: 450px;
     height: 90px;
     font-family: Gotu, serif;
-    background-color: #d2d976;
+    background-color: #c6ce44;
 }
 
 #NorthBtn {
     width: 450px;
     height: 90px;
     font-family: Gotu, serif;
-    background-color: #d7bd7b;
+    background-color: #d3aa3b;
 }
 
 #randomBtn {
     width: 450px;
     height: 90px;
     font-family: Gotu, serif;
-    background-color: #b695dc;
+    background-color: #a77cd9;
 }
 
 .continentsBtn {
-    background-color: #5fbb7a;
     font-size: 25px;
 }
