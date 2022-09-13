@@ -17,6 +17,8 @@ export default function AllRoutes() {
                 <Route path={"/game/europe"} element={<Game addAnswer={addAnswer}/>}/>
                 <Route path={"/game/asia"} element={<Game addAnswer={addAnswer}/>}/>
                 <Route path={"/game/africa"} element={<Game addAnswer={addAnswer}/>}/>
+                <Route path={"/game/america"} element={<Game addAnswer={addAnswer}/>}/>
+                <Route path={"/game/random"} element={<Game addAnswer={addAnswer}/>}/>
                 <Route path={"/game/history"} element={<GameHistory allAnswers={answerAndPoints} deleteAllAnswers={deleteAllAnswers}/>}/>
             </Routes>
         </>

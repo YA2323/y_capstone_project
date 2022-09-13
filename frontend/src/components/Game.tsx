@@ -12,7 +12,7 @@ type GameProps = {
 
 export default function Game(props: GameProps) {
 
-    const {randomFlags, getRandomEuroFlags, getRandomAsianFlags, getRandomAfricanFlags} = useFlags()
+    const {randomFlags, getRandomEuroFlags, getRandomAsianFlags, getRandomAfricanFlags,getRandomAmericanFlags,getRandomAllFlags} = useFlags()
     const [randomShuffledFlags, setRandomShuffledFlags] = useState<string[]>([])
 
     const [actualPoints, setActualPoints] = useState(0)
@@ -137,6 +137,12 @@ export default function Game(props: GameProps) {
         }
         else if (location.pathname === "/game/africa"){
             getRandomAfricanFlags()
+        }
+        else if (location.pathname === "/game/america"){
+            getRandomAmericanFlags()
+        }
+        else if (location.pathname === "/game/random"){
+            getRandomAllFlags()
         }
         setStartButtonText("NEXT FLAG")
         setShowAnswerBtn(true)
