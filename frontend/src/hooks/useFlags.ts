@@ -26,5 +26,23 @@ export default function useFlags() {
             .then(setRandomFlags)
     }
 
-    return {randomFlags, getRandomEuroFlags, getRandomAsianFlags}
+    const getRandomAfricanFlags = () => {
+        axios.get("/flag/africa")
+            .then((response) => response.data)
+            .then(setRandomFlags)
+    }
+
+    const getRandomAmericanFlags = () => {
+        axios.get("/flag/america")
+            .then((response) => response.data)
+            .then(setRandomFlags)
+    }
+
+    const getRandomAllFlags = () => {
+        axios.get("/flag/random")
+            .then((response) => response.data)
+            .then(setRandomFlags)
+    }
+
+    return {randomFlags, getRandomEuroFlags, getRandomAsianFlags, getRandomAfricanFlags,getRandomAmericanFlags,getRandomAllFlags}
 }

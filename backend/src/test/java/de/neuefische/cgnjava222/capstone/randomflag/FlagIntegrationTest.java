@@ -28,12 +28,44 @@ class FlagIntegrationTest {
                         """));
     }
 
-
     @DirtiesContext
     @Test
     void getRandomAsianCountries() throws Exception {
 
         mockMvc.perform(get("/flag/asia"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(""" 
+                        {}
+                        """));
+    }
+
+    @DirtiesContext
+    @Test
+    void getRandomAfricanCountries() throws Exception {
+
+        mockMvc.perform(get("/flag/africa"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(""" 
+                        {}
+                        """));
+    }
+
+    @DirtiesContext
+    @Test
+    void getRandomAmericanCountries() throws Exception {
+
+        mockMvc.perform(get("/flag/america"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(""" 
+                        {}
+                        """));
+    }
+
+    @DirtiesContext
+    @Test
+    void getRandomAllCountries() throws Exception {
+
+        mockMvc.perform(get("/flag/random"))
                 .andExpect(status().isOk())
                 .andExpect(content().json(""" 
                         {}

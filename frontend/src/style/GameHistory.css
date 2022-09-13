@@ -9,3 +9,11 @@
 h2 {
     padding: 20px;
 }
+
+#deleteBtn{
+    border-width: 2.2px;
+    border-style: solid;
+    background-color: #e43713;
+    color: black;
+    margin-top: 15px;
+}
