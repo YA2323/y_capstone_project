@@ -1,9 +1,10 @@
 
+
 header {
     position: sticky;
     top: 0;
-    background: linear-gradient(45deg,#2257e8, #98bfec);
-    border-radius: 0 0 45% 45% / 40%;
+    background: linear-gradient(45deg, #2257e8, #98bfec);
+    border-radius: 0 0 25% 25% / 40%;
 }
 
 h1 {
@@ -11,9 +12,9 @@ h1 {
     text-align: center;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-size: 60px;
+    font-size: 55px;
     color: #100525;
-    font-family: Gotu, serif;
+    font-family: xx, serif;
 }
 
 .nav {
@@ -21,7 +22,6 @@ h1 {
     color: aliceblue;
     font-size: 19px;
     padding-bottom: 5px;
-    font-family: Gotu, serif;
 }
 
 .menu {

@@ -5,7 +5,7 @@ export default function Header() {
 
 
     return (
-        <header>
+        <header className={"header"}>
             <h1>GUESS THE FLAG</h1>
             <nav className={"menu"}>
                 <NavLink className={"nav"} to={"/"}>HOME</NavLink>
